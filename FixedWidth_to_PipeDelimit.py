@@ -2,11 +2,11 @@
 import Tkinter as tk,tkFileDialog, tkSimpleDialog
 
 root = tk.Tk()
-root.filename = tkFileDialog.askopenfilename(initialdir = "I:/FMLH/Reporting/Report Writers/Connolly_Branden",title = "Select file")
+root.filename = tkFileDialog.askopenfilename(initialdir = "/",title = "Select file")
 indataop = root.filename
 print('Input pathway: ' + indataop)
 
-root.filename = tkFileDialog.asksaveasfilename(initialdir = "I:/FMLH/Reporting/Report Writers/Connolly_Branden",title = "Select file")
+root.filename = tkFileDialog.asksaveasfilename(initialdir = "/",title = "Select file")
 outfileop = root.filename
 print ('Output pathway: ' + outfileop)
 
