@@ -23,38 +23,11 @@ def inPalindrome(n):
     inputs a word \n
     no outputs \n
     determines if inputted word is a palindrome \n
-    '''
-    lenN = len(n)
-    halflen = lenN/2
-    roundhalflen = lenN - .5
-    check1 = 0
-    check2 = -1
-    match = 0
-    
-    if  lenN%2 == 0:
-        while check1 < halflen:
-            if n[check1] == n[check2]:
-                match += 1
-            else:
-                print(n+ ' is not a palindrome')
-                break
-            
-            check1 +=1 
-            check2 -=1
-        if match == halflen:
-            print(n + ' is a palindrome')
+    '''    
+    if  n == n[::-1]:
+        print(n + ' is a palindrome')
     else:
-        while check1 < int(roundhalflen):
-            if n[check1] == n[check2]:
-                match += 1
-            else:
-                print(n+ ' is not a palindrome')
-                break
-            
-            check1 +=1 
-            check2 -=1
-        if match == int(roundhalflen):
-            print(n + ' is a palindrome')
+        print(n + ' is not a palindrome')
 
 wordlist = cleanandsplit(input)
 
