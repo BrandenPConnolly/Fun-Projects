@@ -11,10 +11,10 @@ import pandas as pd
 import numpy as np
 
 #Server and Database Name
-serv = 'clarity-prod-shd.db.fmlh.edu'
-dbase = 'FCH_Reporting_DEV'
-file1 = "I:/FMLH/Reporting/Report Writers/Connolly_Branden/ODBCConnect.py"
-file2 = "I:/FMLH/Reporting/Report Writers/Connolly_Branden/Addcolumns.py"
+serv = 'aaaaaa'
+dbase = 'bbbbbbb'
+file1 = "ccccccc"
+file2 = "ddddddd"
 
 #Runs the ODBC Connect script    
 with open(file1) as f:
