@@ -5,7 +5,10 @@ Date: 2021-02-11
 Purpose: determines if words in a comma delimited list are palindromes
 '''
 # input comma delimited list of words
-input = 'radar, madam, hello, ready, mayam, abcdeedcba'
+
+def wordinput():
+    a = input('Input a comma delimited set of words: ')#'radar, madam, hello, ready, mayam, abcdeedcba'
+    return a
 
 def cleanandsplit(n):
     '''
@@ -29,7 +32,10 @@ def inPalindrome(n):
     else:
         print(n + ' is not a palindrome')
 
-wordlist = cleanandsplit(input)
+def main():
+    list = wordinput()
+    wordlist = cleanandsplit(list)
+    for i in wordlist:
+        inPalindrome(i)
 
-for i in wordlist:
-    inPalindrome(i)
+main()
