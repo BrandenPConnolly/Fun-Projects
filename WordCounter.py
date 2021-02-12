@@ -23,7 +23,8 @@ def cleanandsplit(a):
     cleanlist = []
     for i in text:
         textclean = ''.join(ch for ch in i if ch.isalnum())
-        cleanlist.append(textclean)    
+        if len(textclean) > 0:
+            cleanlist.append(textclean)    
 
     return cleanlist
 
