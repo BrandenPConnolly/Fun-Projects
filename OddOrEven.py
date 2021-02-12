@@ -5,11 +5,10 @@ Date: 2021-02-11
 Purpose: Checks if inputed number is even or odd
 '''
 
+def numinput():
+    n = input('Please Enter a Integer: ')
+    return n
 
-
-tOrF = True
-InputNum = 9
-Continue = 'Y'
 
 def evenodd(n):
     '''
@@ -23,34 +22,52 @@ def evenodd(n):
     
     return tf
 
-def isInt(n):
+def isInt(n,mess):
     '''
-    Inputs Number \n
+    Inputs Number and if message should display\n
     Outputs if number is an int \n
     '''
     try:
         int(n)
     except:
-        print('Not an integer, try again')
+        if mess.upper() == 'Y':
+            print('Not an integer, try again')
         tf = False
     else:
         tf = True
     return tf
 
-while Continue.upper() == 'Y':
-
-    InputNum = input('Please Enter a Integer (rounds decimals): ')
-
-    if isInt(InputNum) == True:
-
-        if evenodd(int(InputNum)) == True:
-            print('Even Number')
-            Continue = input('Would You like to Continue (Y or N): ')
-        else:
-            print('Odd Number')
-            Continue = input('Would You like to Continue (Y or N): ')
+def contInput(n):
+    if isInt(n,'N') == True:
+        Continue = input('Would You like to Continue (Y or N): ')
     else:
         Continue = input('Would you like to try again (Y/N): ')
-    
 
-print('Ending Program...')
+    return Continue
+
+
+def output(n):
+    if isInt(n,'Y') == True:
+
+        if evenodd(int(n)) == True:
+            print('Even Number')
+            Continue = contInput(n)
+        else:
+            print('Odd Number')
+            Continue = contInput(n)
+    else:
+        Continue = contInput(n)
+    
+    return Continue
+
+def main():
+    tOrF = True #place holder
+    InputNum = 9 #place holder
+    Continue = 'Y' #starts as Y 
+
+    while Continue.upper() == 'Y':
+        InputNum = numinput()
+        Continue = output(InputNum) 
+    print('Ending Program...')
+
+main()
